@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" href="reset.css">
+	<link rel="stylesheet" href="style.css">
+	<title>Website of Rayna Ney</title>
+	<meta charset="utf-8"  />
+</head>
+
+<body>
+	<scroll-behavior>
+		<scroll-page class= "flex-container" id="home-page">
+			<div class="header-container" id="header-container">
+				<div class="header" id="header">
+					<a href="#home-page" id="home_url"><img class="main-logo" src="./images/main-logo.png"></a>
+					<!-- <img class="main-logo" src="./backgrounds/transparentSquareLogo.png"> -->
+					<ul class="menu-items">
+						<a href="#aboutme-page"><li><h6>ABOUT ME</h6></li></a>
+						<a href="#projects-page"><li><h6>PROJECTS</h6></li></a>
+						<a href="#contactme-page"><li><h6>CONTACT</h6></li></a>
+					</ul>
+				</div>
+			</div>
+			<div class = "text-container" id = "text-container">
+				<h4>Hi, I'm</h4>
+				<h1>Rayna Ney</h1>
+				<h5>(A Web Developer)</h5>
+				<a href="#aboutme-page"><h2>Learn More</h2></a>
+			</div>
+			<!-- <div class="circle-container" id="circle-container">
+				<div class='measuringWrapper'>
+					<div class="inner-circle-container"  id="inner-circle-container">
+						<div class = "circle" id="resume" >
+							<a href="#aboutme-page">
+								<div class = "circle-inner" id="resume-inner">
+									<div class = "fixed-text" id="resume-text"> about me </div>
+								</div>
+							</a>
+						</div>
+						<div class = "circle" id="project">
+							<a href="#projects-page">
+								<div class = "circle-inner" id="project-inner">
+									<div class = "fixed-text" id="project-text"> projects </div>
+								</div>
+							</a>
+						</div>
+						<div class = "circle" id="contact">
+							<a href="#contactme-page">
+								<div class = "circle-inner" id="contact-inner">
+									<div class = "fixed-text" id="contact-text">  contact </div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="arrow-container" id="arrow-container" onclick="growDiv()">
+					<img class="arrow" id="arrow-top" src="images/double-arrow.png">
+					<img class="arrow" id="arrow-bottom" src="images/double-arrow.png">
+				</div>
+			</div> -->
+			<!-- <img class="dice" src="./backgrounds/dice.png"></img> -->
+		</scroll-page>
+		<scroll-page class= "flex-container" id ="aboutme-page">
+			<div class="header-container" id="header-placeholder"></div>
+			 <div class = outer-container>
+				<div class="bio" id="pic">
+					<img class="my-img" src="./backgrounds/me_img.png">
+				</div>
+					<div class="bio" id="bio">
+						<h3  id="bio-info"> <span class="title">About me:</span><br />
+							> I am a <!-- freelance -->web developer and graphic designer based in LA.<br />
+							<br />
+							<span class="title">Stack:</span><br />
+							> HTML, CSS, & Javacsript; Node.js; Express; SQL.</span><br />
+							<br />
+							<span class="title">Other Technical Skills:</span><br />
+							 > JQuery, PHP, Python, Figma, iMovie.</span><br />
+							<br />
+							<span class="title">Education:</span><br />
+							 > Major: Computational Cognitive Science<br />
+							 > Minor: Computer Science<br />
+							 > @ UC Davis.<br />
+							<br />
+							<span class="title">Current Interests:</span><br />
+							 <!-- > Fullstack web development, based anywhere. Open to remote or in person.<br /> -->
+							 > Continuing my education through grad school.<br />
+							 <br />
+							 <span class="title">Hobbies:</span><br />
+							  > Ceramics and biking. <br />
+						  </h3>
+					</div>
+				</div>
+			</div>
+		</scroll-page>
+		<scroll-page class= "flex-container" id ="projects-page">
+			<div class = "project-panel" id="video-valet"></div>
+			<div class = "project-panel" id="bit-project"></div>
+			<div class = "project-panel" id="fiu"></div>
+		</scroll-page>
+		<scroll-page class= "flex-container" id ="contactme-page">
+			<div class="contact-container">
+				<h1 class = "main-title">GET IN TOUCH</h1>
+				<div class ="lower-container">
+					<textarea class="basic-input" id="message" name="message" placeholder="Message.."></textarea>
+					</textarea>
+					<div class="input-column">
+						<input class="basic-input" type="text" id="name" name="name" placeholder="Name">
+						<input class="basic-input" type="text" id="email" name="email" placeholder="Email">
+						<button class="submit state-0"><span class="pre-state-msg">Submit</span></button>
+						<div class="icon-row">
+							<a href="https://www.linkedin.com/in/rayna-ney/"><div class="icon" id="linked-in"></div></a>
+							<a href="https://github.com/raynaney/"><div class="icon" id="github"></div></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</scroll-page> 
+		<scroll-page id ="footer">
+			<p>Designed and developed with ❤️ © 2021 Rayna Ney. All Rights Reserved.</p>
+		</scroll-page>
+	</scroll-behavior>
+	<script>
+		window.onbeforeunload = function () {
+			window.scroll({
+				top: 0, 
+				left: 0, 
+				behavior: 'smooth'
+			});
+		}
+		// window.onscroll = function() { catchHeader() };
+		// var header = document.getElementById("header-container");
+		// var sticky = header.offsetTop;
+
+		const button   = document.querySelector('.submit'),
+      	stateMsg = document.querySelector('.pre-state-msg');
+
+		const updateButtonMsg = function() {
+		button.classList.add('state-1', 'animated');
+		
+		setTimeout(finalButtonMsg, 2000);
+		};
+
+		const finalButtonMsg = function() {
+		button.classList.add('state-2');
+		
+		setTimeout(setInitialButtonState, 2000);
+		};
+
+		const setInitialButtonState = function() {
+		button.classList.remove('state-1', 'state-2', 'animated');
+		};
+
+		button.addEventListener('click', updateButtonMsg);
+
+		// function catchHeader() {
+		// if (window.pageYOffset > sticky) {
+		// 	header.classList.add("sticky");
+		// 	document.getElementById("header-placeholder").style.display = "block";
+		// } else {
+		// 	document.getElementById("header-placeholder").style.display = "none";
+		// 	header.classList.remove("sticky");
+		// 	}
+		// }
+		function growDiv() {
+			var menu = document.getElementById('inner-circle-container');
+			console.log(menu.clientWidth);
+			if (menu.clientWidth) {
+				menu.style.width = 0;
+			} else {
+				menu.style.width ="155px";
+			}
+			if (document.getElementById("arrow-top").style.transform == "scaleX(-1)"){
+				console.log("yep");
+				document.getElementById("arrow-top").style.transform = "scaleX(1)";
+			}
+		}
+	</script>
+</body>
+
+</html>
